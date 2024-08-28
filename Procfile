@@ -1,1 +1,1 @@
-web: gunicorn hostel:app
+web:gunicorn hostel:app
