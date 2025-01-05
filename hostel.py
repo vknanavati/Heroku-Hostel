@@ -216,12 +216,16 @@ def city_hostel_dict(hostels_links):
     composite_hostel_scores = []
 
     for url in range(0, hostels_links):
+        print("url in links_list", url)
         page = requests.get(links_list[url], timeout=30)
 
         soup = BeautifulSoup(page.text, "html.parser")
 
         hostel_name = soup.find("h1").text.strip()
         name_list.append(hostel_name)
+
+        print("hostel_name: ", hostel_name)
+        print("name_list", name_list)
 
         parent_divs = soup.find_all('div', class_='rating-label-score-wrapper')
 
