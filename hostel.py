@@ -11,6 +11,11 @@ app = Flask(__name__, static_folder='static')
 CORS(app)
 
 
+@app.route('/')
+def home_page():
+    return "Welcome to the Hostel App Backend! Use the appropriate endpoints for functionality." # noqa
+
+
 with open("continent_dict.json", encoding="UTF-8") as country_dict:
     country_dict = country_dict.read()
 
