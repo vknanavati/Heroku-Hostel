@@ -227,12 +227,12 @@ def city_hostel_dict(hostels_links):
         print("hostel_name: ", hostel_name)
         print("name_list", name_list)
 
-        parent_divs = soup.find_all('div', class_='rating-label-score-wrapper')
+        parent_divs = soup.find_all('div', class_='rating-wrapper')
 
         print("parent_divs", parent_divs)
 
         specific_scores = [
-            parent_div.find('div', class_='rating-score').text.strip() for
+            parent_div.find('div', class_='review-item-score').text.strip() for
             parent_div in parent_divs
         ]
 
