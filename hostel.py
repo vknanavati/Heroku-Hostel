@@ -231,9 +231,12 @@ def city_hostel_dict(hostels_links):
 
         print("parent_divs", parent_divs)
 
+        for parent_div in parent_divs:
+            review_items = parent_div.find_all('li', class_='review-item')
+
         specific_scores = [
-            parent_div.find('div', class_='review-item-score').text.strip() for
-            parent_div in parent_divs
+            review_item.find('div', class_='review-item-score').strong.text.strip() for # noqa
+            review_item in review_items
         ]
 
         print("specific_scores: ", specific_scores)
