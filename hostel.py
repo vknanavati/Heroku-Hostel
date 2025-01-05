@@ -13,7 +13,7 @@ CORS(app)
 
 @app.route('/')
 def home_page():
-    return "Welcome to the Hostel App Backend! Use the appropriate endpoints for functionality." # noqa
+    return "Welcome to the Hostel App Backend!" # noqa
 
 
 with open("continent_dict.json", encoding="UTF-8") as country_dict:
@@ -140,7 +140,7 @@ def city_page(continent, country, city):
     url = url.replace(" ", "%20")
     print(url)
 
-    response = requests.get(url, timeout=10)
+    response = requests.get(url, timeout=30)
     response.raise_for_status()
 
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -212,7 +212,7 @@ def city_hostel_dict(hostels_links):
     composite_hostel_scores = []
 
     for url in range(0, hostels_links):
-        page = requests.get(links_list[url], timeout=10)
+        page = requests.get(links_list[url], timeout=30)
 
         soup = BeautifulSoup(page.text, "html.parser")
 
