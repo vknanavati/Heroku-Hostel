@@ -189,6 +189,8 @@ links_list = []
 
 def links_city_hostels(paginated_list):
 
+    print("paginated_list", paginated_list)
+
     for index, dummy in enumerate(paginated_list):
         page = requests.get(paginated_list[index], timeout=10)
         soup = BeautifulSoup(page.text, "html.parser")
@@ -197,8 +199,10 @@ def links_city_hostels(paginated_list):
         # scrape each page for links for each hostel listed
         for link in link_elements:
             results = link.find_all("a")
+            print("results after find_all'a': ", results)
             for result in results:
                 link_url = result["href"]
+                print("link_url:", link_url)
                 links_list.append(link_url)
 
     url_count = len(links_list)
@@ -221,10 +225,14 @@ def city_hostel_dict(hostels_links):
 
         parent_divs = soup.find_all('div', class_='rating-label-score-wrapper')
 
+        print("parent_divs", parent_divs)
+
         specific_scores = [
             parent_div.find('div', class_='rating-score').text.strip() for
             parent_div in parent_divs
         ]
+
+        print("specific_scores: ", specific_scores)
 
         composite_hostel_scores.append(specific_scores)
 
