@@ -1,11 +1,11 @@
 Hostel Ratings Comparison helps travelers find top-rated hostels in their desired city using bar graphs. The app scrapes data from Hostelworld and visualizes hostel ratings across key categories, including Security, Location, Staff, Atmosphere, Cleanliness, Value, and Facilities.
 
 ## How to Use the App
-1. **Enter a country name in the input box and click "Submit."
+1. Enter a country name in the input box and click "Submit."
 
-2. **Wait for the dropdown menu to appear, then select a city.
+2. Wait for the dropdown menu to appear, then select a city.
 
-3. **Sit back and watch as graphs displaying the top-rated hostels are generated.
+3. Sit back and watch as graphs displaying the top-rated hostels are generated.
 
 ## How It Works
 The frontend is built with React and uses the Fetch API to communicate with the Flask backend.
